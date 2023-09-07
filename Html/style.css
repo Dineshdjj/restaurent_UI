@@ -1,0 +1,231 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+h1, h2, p{
+    color:#0D0D25;
+}
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#FF9A2A;
+    padding-top: 30px;
+    margin-top: 0;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a, p{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    line-height: 1.75em;
+    font-size:small;
+}
+a:hover{
+    text-decoration: underline;
+}
+h1{
+    text-transform:capitalize
+}
+form{
+    float:left;
+}
+.buttonLink{
+    background-color: #FF8800;
+    color: #FFF;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.welcomeSection{
+    background-color: #DEE9ED;
+    background-image:
+         linear-gradient(to right, #DEE9ED, #FFF);
+    padding: 20px;
+}
+.aboutSection{
+    background-color: #FFF;
+    padding: 10px;
+}
+.orderSection{
+    background-color: #F2F6F7;
+    padding: 25px;
+}
+.orderSection h2, .bookingSection h2, .testimonialsSection h2, h4{
+    text-align: center;
+}
+.orderSection h2 + ul{
+    margin-left: 25%;
+}
+.orderSection h2 + ul li{
+    float: left;
+    padding: 0 10px 20px 10px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+}
+.imageMenu img{
+    width: 90%;
+}
+.imageMenu li{
+    float: left;
+    width: 45%;
+}
+.imageMenu div{
+    margin-top: -70%;
+    margin-bottom: 30%;
+    translate: 0 -30%;
+    text-align: center;
+    color: white;
+}
+.imageMenu div *{
+    color: white;
+}
+.imageMenu div h3 + p{
+    color: #FFAF51;
+}
+.imageMenu + ul{
+    margin-left: 45%;
+}
+.dotSelector, .orderSection h2 + ul, .bookingSection img{
+    display: table;
+    margin: 0 auto;/*I'm not sure why this works when other options don't, but I'll take it for now.*/
+}
+.dotSelector li{
+    float: left;
+    margin-left: 10px;
+    color: #FFDBB2;
+}
+.bookingSection{
+    background-color: #F3F3F3;
+    background-image: linear-gradient(#FFF, #F3F3F3);
+    padding: 40px 10px;
+}
+.bookingSection *{
+    text-align: center;
+}
+.bookingSection section p + p, address a{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:normal;
+}
+address a{
+    color:#FF8800;
+    font-size:larger;
+}
+.leftRightButton{
+    color:#FF9A2A;
+    border: 1px solid #FFAF51;
+    border-radius: 100%;
+    padding: 5px
+}
+section + .leftRightButton{
+    margin-left: 20%;
+}
+.testimonialsSection{
+    background-color: white;
+    background-image: linear-gradient(left, #E0E5E9, #FFF);
+}
+.testimonialsSection{
+    text-align: center;
+    padding: 10px;
+}
+.testimonialsSection img{
+    border-radius: 100%;
+    width: 100px;
+}
+h6 + p{
+    color:#FFAF51;
+}
+
+
+/******************************************
+/* MOBILE STYLES
+/*******************************************/
+
+/*Nothing to see here.*/
+
+/******************************************
+/* DESKTOP STYLES
+/*******************************************/
+@media all and (min-width: 800px){
+    .siteNav ul{
+         float: right;
+    }
+    .siteNav li, .socialNav li{
+         float: left;
+         margin: 0;
+         margin-right: 20px;
+    }
+    .socialNav li{
+         float: left;
+         margin-right: 2em;
+    }
+    h1{
+         clear: both;
+         margin-top: 8rem;
+         margin-right: 50%;
+    }
+    .welcomeSection{
+         background-image:
+              url("../l.jpeg"),
+              linear-gradient(to right, #DEE9ED, #FFF);
+         background-repeat: no-repeat;
+         background-position: right; /*50%, aka the middle, is the default value being taken for vertical offset, which is what I want.*/
+         padding-bottom: 8rem;
+         padding-left: 10%;
+    }
+    .aboutSection{
+         clear: left;
+         background-image: url("../m.jpeg");
+         background-repeat: no-repeat;
+         background-position: middle bottom;
+         padding: 100px 10px;
+    }
+    .aboutSection > *{
+         text-align: left;
+         margin-left: 40%;
+         margin-right: 10%;
+    }
+    .imageMenu li{
+         width: 23%;
+    }
+    .bookingSection{
+         background-image:
+              url("../m.jpeg"),
+              linear-gradient(#FFF, #F3F3F3);
+    }
+    .bookingSection section{
+         float: left;
+         width: 50%;
+    }
+    section + .leftRightButton{
+         margin-left: 30%;
+    }
+    .testimonialsSection{
+         padding:30px
+    }
+    .testimonialsSection{
+         margin: 0 22%;
+    }
+}
